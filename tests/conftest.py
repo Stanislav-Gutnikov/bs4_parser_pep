@@ -9,6 +9,7 @@ from typing import List, Tuple
 from requests_cache import CachedSession, ALL_METHODS
 from requests_mock import Adapter
 
+
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SRC_DIR = BASE_DIR / 'src'
 sys.path.append(str(BASE_DIR))
@@ -21,7 +22,7 @@ PEP_URL = 'https://www.python.org/dev/peps/'
 precode_files = ['constants.py', 'main.py', 'utils.py']
 src_dir_files = [file.name for file in SRC_DIR.rglob('*.py')]
 try:
-    from src import utils, configs, main
+    from src import utils, main
 except (ImportError, ModuleNotFoundError, NameError):
     for file in precode_files:
         assert file in src_dir_files, f'Отсутсвует файл {file}'
