@@ -100,8 +100,7 @@ def pep(session):
                         stack_info=True
                     )
     results = []
-    for key, val in statuses.items():
-        results.append((key, val))
+    results.extend(statuses.items())
     return results
 
 
